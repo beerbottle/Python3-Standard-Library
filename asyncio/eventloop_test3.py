@@ -23,7 +23,7 @@ def reader():
 loop.add_reader(rsock, reader)
 
 # Simulate the reception of data from the network
-loop.call_soon(wsock, 'abc'.encode())
+loop.call_soon(wsock.send, 'abc'.encode())
 
 # Run the event loop
 loop.run_forever()
